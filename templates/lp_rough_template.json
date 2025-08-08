@@ -1,0 +1,50 @@
+{
+  "product_name": "商品名をここに入力",
+  "purpose": "ECサイトでの新商品ローンチのため、見込み客に向けた魅力的なLPを作成",
+  "target_platform": "楽天以外のECサイト",
+  "sku_list": [
+    {
+      "type": "カラー名/サイズ",
+      "sku": "SKUコード",
+      "jan": "JANコード"
+    }
+  ],
+  "catch_copy": "商品の魅力を一言で表現",
+  "main_features": "最大の特徴・機能を簡潔に",
+  "tonmana_url": "https://go.docbase.io/posts/トンマナ参照記事ID",
+  "base_data_url": "https://drive.google.com/デザインベースデータ",
+  "lp_structure": [
+    "TOPキャッチ",
+    "販売実績・人気訴求",
+    "ブランド価値・安全性",
+    "メイン機能1",
+    "メイン機能2",
+    "使用シーン",
+    "サイズ・スペック",
+    "付属品",
+    "保証・サポート",
+    "よくある質問"
+  ],
+  "page_details": [
+    {
+      "text": "商品名\\n\\nキャッチコピー\\n\\n主要機能の箇条書き",
+      "layout_note": "商品の魅力が一目で伝わるデザインに",
+      "has_images": true,
+      "images": ["メイン商品画像URL"]
+    },
+    {
+      "text": "累計◯◯万台突破\\n※2025年◯月時点",
+      "layout_note": "数字を大きく、インパクトのあるデザインで",
+      "has_images": false
+    }
+  ],
+  "achievements": "楽天ランキング1位獲得\\n累計販売数10万個突破",
+  "brand_value": "日本企業による安心の品質管理\\n厳格な検査基準をクリア",
+  "feature_1": "特徴1のタイトル\\n詳細な説明文",
+  "feature_2": "特徴2のタイトル\\n詳細な説明文",
+  "use_scenes": "アウトドア、キャンプ、車中泊、災害時など様々なシーンで活躍",
+  "specs": "サイズ：W○○×D○○×H○○mm\\n重量：○○kg\\n容量：○○L",
+  "accessories": "本体、ACアダプター、取扱説明書、保証書",
+  "warranty": "メーカー保証2年間\\n日本国内サポート対応",
+  "faq": "Q: よくある質問1\\nA: 回答1\\n\\nQ: よくある質問2\\nA: 回答2"
+}

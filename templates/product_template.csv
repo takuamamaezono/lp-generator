@@ -1,0 +1,37 @@
+項目名,値,説明
+product_name,ICEBERG 12L,商品名（必須）
+purpose,新商品ローンチのためのLP作成,作成の目的・意図
+target_platform,楽天以外のECサイト,対象プラットフォーム
+catch_copy,持ち運べる冷凍・冷蔵庫,キャッチコピー
+main_features,最大冷却 -20℃,メイン機能・特徴
+tonmana_url,https://go.docbase.io/posts/3821846,トンマナ参照URL（任意）
+base_data_url,https://drive.google.com/xxxxx,ベースデータURL（任意）
+,,
+=== SKU情報（複数行可）===,,
+sku_type,sku,jan
+コヨーテタン,A0057,4571427130572
+,,
+=== LP構成（10枚）===,,
+page_1,TOPキャッチ,
+page_2,楽天で売れている訴求,
+page_3,日本ブランドとしての安全性・販売実績,
+page_4,冷却性能,
+page_5,何でも冷やせる,
+page_6,これだけ冷やせる,
+page_7,どこでも使える,
+page_8,サイズ+重さ+付属品,
+page_9,スペック,
+page_10,保証期間+回収可能の訴求,
+,,
+=== 各ページ詳細（任意）===,,
+page_1_text,ICEBERG 12L\n\n持ち運べる冷凍・冷蔵庫\n\n最大冷却 -20℃,
+page_1_layout_note,商品の魅力が一目で伝わるデザインに,
+page_1_image_1,https://example.com/main.jpg,メイン画像URL（なければ空欄）
+page_2_text,180000台突破\n※2025年6月10日時点,
+page_2_layout_note,数字を大きくインパクトのあるデザインで,
+,,
+=== その他の情報（任意）===,,
+achievements,楽天ランキング1位獲得,販売実績・受賞歴
+brand_value,日本企業による安心の品質管理,ブランド価値
+warranty,メーカー保証2年間,保証・サポート
+faq,Q: よくある質問1\nA: 回答1,FAQ

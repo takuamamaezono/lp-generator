@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  lp-generator:
+    build: .
+    container_name: docbase-lp-generator
+    environment:
+      # Docbase API設定
+      - DOCBASE_ACCESS_TOKEN=${DOCBASE_ACCESS_TOKEN}
+      - DOCBASE_TEAM=${DOCBASE_TEAM:-go}
+    volumes:
+      # テンプレートとアウトプットをホストと共有
+      - ./templates:/app/templates
+      - ./output:/app/output
+      - ./data:/app/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+  # Web UIバージョン（オプション）
+  lp-generator-web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: docbase-lp-generator-web
+    ports:
+      - "8080:8080"
+    environment:
+      - DOCBASE_ACCESS_TOKEN=${DOCBASE_ACCESS_TOKEN}
+      - DOCBASE_TEAM=${DOCBASE_TEAM:-go}
+    volumes:
+      - ./templates:/app/templates
+      - ./output:/app/output
+      - ./data:/app/data
+    restart: unless-stopped
+    profiles: ["web"]
