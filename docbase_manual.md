@@ -1,19 +1,21 @@
-# LPラフ案自動生成システム 操作マニュアル
+# 🚀 LPラフ案自動生成システム 操作マニュアル（競合分析版）
 
 ## 🎯 システム概要
 
-規定書CSVから自動でLPラフ案を生成してDocbaseにアップロードするシステムです。
+商品データから**競合分析機能付き**の高品質LPラフ案を自動生成してDocbaseにアップロードする次世代システムです。
 
-### ✨ 特徴
-- 規定書CSV → 1コマンド → 完成したLPラフ案
-- 商品情報（SKU・JAN、仕様、セールスポイント）を自動抽出
-- Docbaseに自動アップロード
-- Docker対応で誰でも使える
+### ✨ 最新機能
+- **🤖 競合分析AI**: 同一カテゴリ商品の市場分析
+- **📊 データドリブン**: 競合データに基づく最適化された訴求
+- **📁 マルチフォーマット**: CSV・Excel・PDF対応
+- **🐳 Docker**: 環境構築不要で即利用
+- **👥 チーム対応**: GitHub共有で全員利用可能
 
 ### 📦 生成されるもの
-- **LPラフ案**（10ページ構成）
-- **商品名・SKU・JAN情報**
-- **規定書の全情報を反映**
+- **競合分析レポート**（市場データ・価格分析・成功パターン）
+- **強化版LPラフ案**（競合データ反映・差別化明確）
+- **通常版LPラフ案**（従来の10ページ構成）
+- **商品情報**（SKU・JAN・仕様・セールスポイント）
 
 ---
 
@@ -25,17 +27,39 @@
 3. **システムの起動**（Docker推奨）
 
 ### 2. 実行コマンド
-```bash
-# ローカル環境（上級者向け）
-python correct_lp_generator.py "規定書ファイル.csv" --upload
 
-# Docker環境（推奨）
-docker-compose exec lp-generator python correct_lp_generator.py /app/data/規定書ファイル.csv --upload
+#### 🌟 競合分析強化版（推奨）
+```bash
+# 競合分析付き最高品質LP生成
+docker-compose exec lp-generator python advanced_lp_generator.py /app/data/商品データ.csv --upload --analysis
+
+# 生成のみ（アップロードなし）
+docker-compose exec lp-generator python advanced_lp_generator.py /app/data/商品データ.csv --analysis
+```
+
+#### 📊 通常版（高速）
+```bash
+# 従来の高速生成
+docker-compose exec lp-generator python correct_lp_generator.py /app/data/商品データ.csv --upload
+```
+
+#### 📁 対応フォーマット
+```bash
+# CSV形式
+docker-compose exec lp-generator python advanced_lp_generator.py /app/data/商品.csv --analysis
+
+# Excel形式
+docker-compose exec lp-generator python excel_to_lp_generator.py /app/data/商品.xlsx --upload
+
+# PDF形式（プレスリリース）
+docker-compose exec lp-generator python pdf_to_lp_generator.py /app/data/リリース.pdf --upload
 ```
 
 ### 3. 結果確認
-- **コンソール**にDocbase URLが表示されます
-- **outputフォルダ**にMarkdownファイルが生成されます
+- **📊 競合分析レポート**: `output/competitor_report_商品名_日時.md`
+- **🚀 強化版LP**: `output/lp_rough_enhanced_商品名_日時.md`
+- **📝 通常LP**: `output/lp_rough_商品名_日時.md`
+- **🌐 Docbase URL**: コンソールに表示
 
 ---
 
@@ -97,17 +121,30 @@ docker-compose logs lp-generator
 
 ---
 
-## 📋 規定書CSVの要件
+## 📋 データファイルの要件
 
-### 必須情報
+### CSV形式（Kishima規定書）
+#### 必須情報
 - **商品名**: 商品の正式名称
-- **商品名カナ**: カタカナ表記
+- **商品名カナ**: カタカナ表記  
 - **メーカー型番**: 商品の型番
-- **JANコード（バリエーション別）**: カラー別JANコード
+- **JANコード（バリエーション別）**: `ブラック：4571427130640`
 - **商品サイズ**: サイズ情報
 - **重量**: 商品重量
 - **定格**: 電源仕様等
-- **セールスポイント**: ●から始まる特徴一覧
+- **セールスポイント**: `●`から始まる特徴一覧
+
+### Excel形式
+#### サポート構成
+- **複数シート対応**: 商品情報・仕様・価格シート等
+- **自動セル抽出**: 商品名・価格・特徴を自動認識
+- **フォーマット自由**: 多様なExcel形式に対応
+
+### PDF形式（プレスリリース）
+#### 対応内容
+- **商品発表資料**: 新商品のプレスリリース
+- **技術仕様書**: 詳細スペック資料
+- **マーケティング資料**: 売り込み資料
 
 ### フォーマット例
 ```
@@ -222,12 +259,19 @@ docker-compose up -d
 
 ## 📈 今後の機能拡張
 
-### 予定機能
-- [ ] Excel形式の規定書サポート
-- [ ] PDF形式のプレスリリース対応
-- [ ] 画像自動取得機能
-- [ ] レイアウト案の自動生成
-- [ ] 多言語対応
+### 実装済み機能 ✅
+- [x] **競合分析AI**: 市場データ分析・最適化提案
+- [x] **Excel形式対応**: 複数シート・多様フォーマット
+- [x] **PDF形式対応**: プレスリリース・技術資料
+- [x] **Docker完全対応**: 環境構築不要
+- [x] **GitHub共有**: チーム全体での利用
+
+### 今後の機能拡張
+- [ ] **AI画像生成連携**: 商品画像の自動生成
+- [ ] **リアルタイム競合監視**: 市場変動の自動検知
+- [ ] **A/Bテスト機能**: 複数LP案の自動生成
+- [ ] **多言語対応**: 英語・中国語LP対応
+- [ ] **Webインターフェース**: ブラウザでの操作画面
 
 システムの改善要望や新機能のリクエストがあれば、GitHubのIssuesまたはDocbaseでお知らせください。
 
